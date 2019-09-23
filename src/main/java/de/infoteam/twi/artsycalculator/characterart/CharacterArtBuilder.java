@@ -145,7 +145,6 @@ public class CharacterArtBuilder {
         charArtFour.setPosition(3,2,true);
         charArtFour.setPosition(3,3,true);
 
-
         // Fifth Row
         charArtFour.setPosition(4,2,true);
         return charArtFour;

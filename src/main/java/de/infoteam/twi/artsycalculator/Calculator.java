@@ -8,9 +8,8 @@ import java.util.List;
 public class Calculator {
 
     public static void main(String[] args) {
-        String[] arguments = new String[]{"2", "2"};
         CharacterArtManager cam = new CharacterArtManager();
-        List<CharacterArt> characterArtList = cam.createCharacterArtListFromArgs(arguments);
+        List<CharacterArt> characterArtList = cam.createCharacterArtListFromArgs(args);
         CharacterArt combinedCharacterArts = CharacterArtManager.combineCharacterArtObjects(characterArtList);
         CharacterArtManager.printCharacterArt(combinedCharacterArts);
 

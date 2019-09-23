@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterArt {
-    private List<List<Boolean>> area; // TODO Find better name!
+    private List<List<Boolean>> area;
 
     CharacterArt (int height, int width) {
         this.area = new ArrayList<List<Boolean>>();

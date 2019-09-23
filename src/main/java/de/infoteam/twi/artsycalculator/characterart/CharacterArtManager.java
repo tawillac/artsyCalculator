@@ -69,7 +69,7 @@ public class CharacterArtManager {
     }
 
     public static CharacterArt combineCharacterArtObjects(List<CharacterArt> characterArts ) {
-        List<List<Boolean>> combinedArea = new ArrayList<List<Boolean>>();
+        List<List<Boolean>> combinedArea = new ArrayList<>();
         for (int i = 0; i < characterArts.get(0).getArea().size(); i++) {
             final int position = i;
             List<Boolean> combinedRow = new ArrayList<Boolean>();
