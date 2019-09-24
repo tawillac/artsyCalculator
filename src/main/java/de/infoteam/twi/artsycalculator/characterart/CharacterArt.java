@@ -1,17 +1,21 @@
 package de.infoteam.twi.artsycalculator.characterart;
 
+import de.infoteam.twi.artsycalculator.characterart.initializer.CharacterArtInitializer;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterArt {
     private List<List<Boolean>> area;
+    private CharacterArtInitializer initializer;
 
-    CharacterArt (int height, int width) {
+    CharacterArt (CharacterArtInitializer initializer) {
         this.area = new ArrayList<List<Boolean>>();
-        for (int i = 0; i < height; i++) {
+        this.initializer = initializer;
+        for (int i = 0; i < initializer.getHeight(); i++) {
             area.add(new ArrayList<Boolean>());
         }
-        initializeArea(height, width);
+        initializeArea(initializer.getHeight(), initializer.getWidth());
     }
 
     private void initializeArea(int height, int width) {
@@ -20,6 +24,7 @@ public class CharacterArt {
                 initPosition(i, j);
             }
         }
+        this.initializer.initializeCharacter(this);
     }
 
     CharacterArt (List<List<Boolean>> area) {
@@ -42,4 +47,14 @@ public class CharacterArt {
         return area;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof CharacterArt) {
+            CharacterArt otherCharacterart = (CharacterArt)obj;
+            if (otherCharacterart.getArea().equals(this.getArea())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
