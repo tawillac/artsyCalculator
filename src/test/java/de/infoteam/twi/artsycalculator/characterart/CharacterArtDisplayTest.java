@@ -34,6 +34,7 @@ public class CharacterArtDisplayTest {
     public void createCharacterArtListFromString() {
         String testString = "1+2=3";
         List<CharacterArt> referenceArtList = new ArrayList<>();
+
         referenceArtList.add(new CharacterArt(new InitializeOne()));
         referenceArtList.add(new CharacterArt(new InitializeSpace()));
         referenceArtList.add(new CharacterArt(new InitializePlus()));
@@ -44,6 +45,7 @@ public class CharacterArtDisplayTest {
         referenceArtList.add(new CharacterArt(new InitializeSpace()));
         referenceArtList.add(new CharacterArt(new InitializeThree()));
         referenceArtList.add(new CharacterArt(new InitializeSpace()));
+
         List<CharacterArt> actualArtList = CharacterArtDisplay.createCharacterArtListFromString(testString);
         assertEquals(referenceArtList, actualArtList);
 
