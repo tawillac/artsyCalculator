@@ -32,10 +32,9 @@ public class EquationParser {
         firstNumber = Integer.parseInt(args[0]);
 
         // Check if other equation items are tuples of operator and number and create tuple objects, if they are
-        for (int i = 1; i < args.length; i++) {
+        for (int i = 1; i < args.length; i=i+2) {
             if (Equation.Operator.isOperator(args[i]) && isNumber(args[i+1])) {
                 tupleList.add(new Equation.OperatorNumberTuple(Equation.Operator.fromString(args[i]), Integer.parseInt(args[i+1])));
-                i++;
             } else {
                 throw new EquationException("Invalid tuple");
             }

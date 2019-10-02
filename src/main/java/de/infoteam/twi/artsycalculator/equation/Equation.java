@@ -26,11 +26,7 @@ public class Equation {
         }
 
         public static Boolean isOperator(String text) {
-            if (fromString(text) == null) {
-                return false;
-            } else {
-                return true;
-            }
+            return fromString(text) != null;
         }
 
         public static Operator fromString(String text) {
@@ -43,7 +39,7 @@ public class Equation {
         }
     }
 
-    public static class OperatorNumberTuple { // TODO find better name
+    public static class OperatorNumberTuple {
         Operator operator;
         Integer number;
 
@@ -74,18 +70,14 @@ public class Equation {
     public String printEquation() {
         StringBuilder equation = new StringBuilder();
         equation.append(this.firstNumber);
-        this.tupleList.stream().forEach(tuple -> {
-            equation.append(tuple.getOperator().text + tuple.getNumber());
-        });
+        this.tupleList.stream().forEach(tuple -> equation.append(tuple.getOperator().text + tuple.getNumber()));
         equation.append("=" + result);
         return equation.toString();
     }
 
     private void calculate() {
         final Integer[] partResult = {this.firstNumber};
-        this.tupleList.stream().forEach(tuple -> {
-            partResult[0] = tuple.getOperator().calculate(partResult[0], tuple.getNumber());
-        });
+        this.tupleList.stream().forEach(tuple -> partResult[0] = tuple.getOperator().calculate(partResult[0], tuple.getNumber()));
 
         this.result = partResult[0];
     }

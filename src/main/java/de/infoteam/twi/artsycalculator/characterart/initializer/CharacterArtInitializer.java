@@ -2,15 +2,13 @@ package de.infoteam.twi.artsycalculator.characterart.initializer;
 
 import de.infoteam.twi.artsycalculator.characterart.CharacterArt;
 
-import java.util.List;
-
 public interface CharacterArtInitializer {
 
-    final Integer height = 5;
+    final Integer HEIGHT = 5;
 
     default Integer getHeight() {
-        return height;
-    };
+        return HEIGHT;
+    }
     Integer getWidth();
     CharacterArt initializeCharacter(CharacterArt characterArt);
 }

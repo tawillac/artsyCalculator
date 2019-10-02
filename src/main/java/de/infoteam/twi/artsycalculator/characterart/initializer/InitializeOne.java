@@ -2,8 +2,6 @@ package de.infoteam.twi.artsycalculator.characterart.initializer;
 
 import de.infoteam.twi.artsycalculator.characterart.CharacterArt;
 
-import java.util.List;
-
 public class InitializeOne implements CharacterArtInitializer {
 
     private Integer width = 2;

@@ -10,10 +10,10 @@ public class CharacterArt {
     private CharacterArtInitializer initializer;
 
     CharacterArt (CharacterArtInitializer initializer) {
-        this.area = new ArrayList<List<Boolean>>();
+        this.area = new ArrayList<>();
         this.initializer = initializer;
         for (int i = 0; i < initializer.getHeight(); i++) {
-            area.add(new ArrayList<Boolean>());
+            area.add(new ArrayList<>());
         }
         initializeArea(initializer.getHeight(), initializer.getWidth());
     }
@@ -56,5 +56,12 @@ public class CharacterArt {
             }
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + this.area.hashCode();
+        return result;
     }
 }

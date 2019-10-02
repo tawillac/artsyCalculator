@@ -5,6 +5,10 @@ import java.util.List;
 
 public class CharacterArtDisplay {
 
+    private CharacterArtDisplay() {
+
+    }
+
     public static void printCharacterArtList(List<CharacterArt> characterArts) {
         CharacterArt combinedCharacterArts = combineCharacterArtObjects(characterArts);
         printCharacterArt(combinedCharacterArts);
@@ -27,14 +31,11 @@ public class CharacterArtDisplay {
         List<List<Boolean>> combinedArea = new ArrayList<>();
         for (int i = 0; i < characterArts.get(0).getArea().size(); i++) {
             final int position = i;
-            List<Boolean> combinedRow = new ArrayList<Boolean>();
-            characterArts.stream().forEach(charArt -> {
-                combinedRow.addAll(charArt.getArea().get(position));
-            });
+            List<Boolean> combinedRow = new ArrayList<>();
+            characterArts.stream().forEach(charArt -> combinedRow.addAll(charArt.getArea().get(position)));
             combinedArea.add(combinedRow);
         }
-        CharacterArt combinedArt = new CharacterArt(combinedArea);
-        return combinedArt;
+        return new CharacterArt(combinedArea);
     }
 
     public static List<CharacterArt> createCharacterArtListFromString(String string) {

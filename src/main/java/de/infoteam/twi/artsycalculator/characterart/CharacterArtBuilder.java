@@ -8,6 +8,10 @@ import java.util.Map;
 
 public class CharacterArtBuilder {
 
+    private CharacterArtBuilder() {
+
+    }
+
     static Map<String, CharacterArtInitializer> initializerMap = new HashMap<>();
     static {
         initializerMap.put("1", new InitializeOne());

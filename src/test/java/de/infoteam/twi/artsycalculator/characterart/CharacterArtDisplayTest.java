@@ -11,16 +11,6 @@ import static org.junit.Assert.assertEquals;
 public class CharacterArtDisplayTest {
 
     @Test
-    public void printCharacterArtList() {
-        // Dependency injection for System.out.println needed
-    }
-
-    @Test
-    public void printCharacterArt() {
-        // Dependency injection for System.out.println needed
-    }
-
-    @Test
     public void combineCharacterArtObjects() {
         List<CharacterArt> artList = new ArrayList<CharacterArt>();
         artList.add(new CharacterArt(new InitializeOne()));
